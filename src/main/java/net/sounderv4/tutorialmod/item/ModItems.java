@@ -7,6 +7,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.sounderv4.tutorialmod.Tutorialmod;
+import net.sounderv4.tutorialmod.block.ModBlocks;
 
 public class ModItems {
     public static final Item PINK_GARNET = registerItem("pink_garnet", new Item(new Item.Settings()));
@@ -25,6 +26,10 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries ->{
             entries.add(PINK_GARNET);
             entries.add(RAW_PINK_GARNET);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries ->{
+            entries.add(ModBlocks.PINK_GARNET_BLOCK);
+            entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
         });
     }
 }
