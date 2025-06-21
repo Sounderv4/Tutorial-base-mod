@@ -18,6 +18,8 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                       entries.add(ModItems.PINK_GARNET);
                       entries.add(ModItems.RAW_PINK_GARNET);
+
+                      entries.add(ModItems.CHISEL);
                     }).build());
 
     public static final ItemGroup PINK_GARNET_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -27,6 +29,26 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.PINK_GARNET_BLOCK);
                         entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
+                        entries.add(ModBlocks.PINK_GARNET_ORE);
+                        entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
+                    }).build());
+
+    public static final ItemGroup FROSTGEM_TIEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Tutorialmod.MOD_ID, "frostgem_items"),
+            FabricItemGroup.builder().icon(()-> new ItemStack(ModItems.FROSTGEM_SHARDS))
+                    .displayName(Text.translatable("itemgroup.tutorialmod.frostgem_items"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModItems.FROSTGEM);
+                        entries.add(ModItems.FROSTGEM_SHARDS);
+                    }).build());
+
+    public static final ItemGroup FROSTGEM_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Tutorialmod.MOD_ID, "frostgem_blocks"),
+            FabricItemGroup.builder().icon(()-> new ItemStack(ModBlocks.FROSTGEM_BLOCK))
+                    .displayName(Text.translatable("itemgroup.tutorialmod.frostgem_blocks"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModBlocks.FROSTGEM_ORE);
+                        entries.add(ModBlocks.FROSTGEM_BLOCK);
                     }).build());
 
     public static void registerItemGroups(){
