@@ -4,6 +4,8 @@
   "item.tutorialmod.frostgem": "Frostgem",
   "item.tutorialmod.frostgem_shards": "Frostgem Shards",
   "item.tutorialmod.chisel": "Chisel",
+  "item.tutorialmod.cauliflower": "Cauliflower",
+  "item.tutorialmod.starlight_ashes": "Starlight Ashes",
 
   "block.tutorialmod.pink_garnet_block": "Pink Garnet Block",
   "block.tutorialmod.raw_pink_garnet_block": "Raw Pink Garnet Block",
@@ -12,10 +14,18 @@
   "block.tutorialmod.pink_garnet_ore": "Pink Garnet Ore",
   "block.tutorialmod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
   "block.tutorialmod.ipeas": "Ipeas",
+  "block.tutorialmod.magic_block": "Magic Block",
 
   "itemgroup.tutorialmod.pink_garnet_blocks": "Pink Garnet Blocks",
   "itemgroup.tutorialmod.frostgem_blocks": "Frostgem Blocks",
   "itemgroup.tutorialmod.pink_garnet_items": "Pink Garnet Items",
-  "itemgroup.tutorialmod.frostgem_items": "Frostgem Items"
+  "itemgroup.tutorialmod.frostgem_items": "Frostgem Items",
+  "itemgroup.tutorialmod.food_items_group": "Food items",
+  "itemgroup.tutorialmod.fuels_group": "Fuels",
 
+  "tooltip.tutoriialmod.magic_block.tooltip": "This block is very, very §9MAGICAL§",
+  "tooltip.tutorialmod.chisel.shift_down": "This item chisels blocks into Bricks!",
+  "tooltip.tutorialmod.chisel": "Press §eShift§r for more Infromation!",
+  "tooltip.tutorialmod.cauliflower.tooltip": "A delicious and healthy food!",
+  "tooltip.tutorialmod.frostgem.tooltip": "§9It's cold to the touch!§"
 }

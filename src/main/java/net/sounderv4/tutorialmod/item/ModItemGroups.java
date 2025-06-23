@@ -51,6 +51,24 @@ public class ModItemGroups {
                         entries.add(ModBlocks.FROSTGEM_BLOCK);
                     }).build());
 
+    public static final ItemGroup FOODS_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Tutorialmod.MOD_ID, "food_items_group"),
+            FabricItemGroup.builder().icon(()-> new ItemStack(ModItems.CAULIFLOWER))
+                    .displayName(Text.translatable("itemgroup.tutorialmod.food_items_group"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModItems.CAULIFLOWER);
+
+                    }).build());
+
+    public static final ItemGroup FUELS_GROUP = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Tutorialmod.MOD_ID, "fuels_group"),
+            FabricItemGroup.builder().icon(()-> new ItemStack(ModItems.STARLIGHT_ASHES))
+                    .displayName(Text.translatable("itemgroup.tutorialmod.fuels_group"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModItems.STARLIGHT_ASHES);
+
+                    }).build());
+
     public static void registerItemGroups(){
         Tutorialmod.LOGGER.info("Registering Item Groups for " + Tutorialmod.MOD_ID);
     }

@@ -13,6 +13,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.sounderv4.tutorialmod.Tutorialmod;
+import net.sounderv4.tutorialmod.block.custom.MagicBlock;
 
 public class ModBlocks {
 
@@ -43,6 +44,9 @@ public class ModBlocks {
     public static final Block IPEAS = registerBlock("ipeas",
             new Block(AbstractBlock.Settings.create().strength(5f).sounds(BlockSoundGroup.STONE)
                     .requiresTool()));
+
+    public static  final Block MAGIC_BLOCK = registerBlock("magic_block",
+            new MagicBlock(AbstractBlock.Settings.create().strength(1f).requiresTool()));
 
 
     private static Block registerBlock(String name, Block block) {
