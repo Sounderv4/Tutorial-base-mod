@@ -40,6 +40,13 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.FROSTGEM);
                         entries.add(ModItems.FROSTGEM_SHARDS);
+
+                        entries.add(ModItems.PINK_GARNET_SWORD);
+                        entries.add(ModItems.PINK_GARNET_AXE);
+                        entries.add(ModItems.PINK_GARNET_PICKAXE);
+                        entries.add(ModItems.PINK_GARNET_HOE);
+                        entries.add(ModItems.PINK_GARNET_SHOVEL);
+
                     }).build());
 
     public static final ItemGroup FROSTGEM_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,

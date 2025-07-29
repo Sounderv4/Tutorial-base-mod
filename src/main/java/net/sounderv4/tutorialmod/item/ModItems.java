@@ -1,9 +1,7 @@
 package net.sounderv4.tutorialmod.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -36,6 +34,40 @@ public class ModItems {
         }
     });
     public static final Item FROSTGEM_SHARDS = registerItem("frostgem_shards", new Item(new Item.Settings()));
+
+    public static Item PINK_GARNET_SWORD = registerItem("pink_garnet_sword",
+            new SwordItem(ModToolMaterials.PINK_GARNET, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, 2, -2.4f))));
+    public static Item PINK_GARNET_PICKAXE = registerItem("pink_garnet_pickaxe",
+            new PickaxeItem(ModToolMaterials.PINK_GARNET, new Item.Settings()
+                    .attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, -1, -2.8f))));
+    public static Item PINK_GARNET_SHOVEL = registerItem("pink_garnet_shovel",
+            new ShovelItem(ModToolMaterials.PINK_GARNET, new Item.Settings()
+                    .attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, -.5f, -3))));
+    public static Item PINK_GARNET_AXE = registerItem("pink_garnet_axe",
+            new AxeItem(ModToolMaterials.PINK_GARNET, new Item.Settings()
+                    .attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, 4, -3))));
+    public static Item PINK_GARNET_HOE = registerItem("pink_garnet_hoe",
+            new HoeItem(ModToolMaterials.PINK_GARNET, new Item.Settings()
+                    .attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, -4, 0))));
+
+    public static Item SPEED_SWORD = registerItem("speed_sword",
+            new SwordItem(ToolMaterials.IRON, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, 1, -1.8f))));
+    public static Item SPEED_PICKAXE = registerItem("speed_pickaxe",
+            new PickaxeItem(ToolMaterials.IRON, new Item.Settings()
+                    .attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, -1, -2.8f))));
+    public static Item SPEED_SHOVEL = registerItem("speed_shovel",
+            new ShovelItem(ToolMaterials.IRON, new Item.Settings()
+                    .attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, -.5f, -2.5f))));
+    public static Item SPEED_AXE = registerItem("speed_axe",
+            new AxeItem(ToolMaterials.IRON, new Item.Settings()
+                    .attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, 3, -2.5f))));
+    public static Item SPEED_HOE = registerItem("speed_hoe",
+            new HoeItem(ToolMaterials.IRON, new Item.Settings()
+                    .attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, -4, 0))));
+
+
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(Tutorialmod.MOD_ID, name), item);
