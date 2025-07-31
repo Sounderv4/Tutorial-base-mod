@@ -17,6 +17,8 @@ public class ModTags {
         public static final TagKey<Block> INCORRECT_FOR_PINK_GARTNET_TOOL = createTag("incorrect_for_pink_garnet_tool");
         public static final TagKey<Block> NEEDS_SPEED_TOOL = createTag("needs_speed_tool");
         public static final TagKey<Block> INCORRECT_FOR_SPEED_TOOL = createTag("incorrect_for_speed_tool");
+        public static final TagKey<Block> NEEDS_LAPITE_TOOL = createTag("needs_lapite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_LAPITE_TOOL = createTag("incorrect_for_lapite_tool");
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Tutorialmod.MOD_ID, name));
 

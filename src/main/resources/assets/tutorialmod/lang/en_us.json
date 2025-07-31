@@ -6,6 +6,7 @@
   "item.tutorialmod.chisel": "Chisel",
   "item.tutorialmod.cauliflower": "Cauliflower",
   "item.tutorialmod.starlight_ashes": "Starlight Ashes",
+  "item.tutorialmod.lapite": "Lapite",
 
   "item.tutorialmod.pink_garnet_sword": "Pink Garnet Sword",
   "item.tutorialmod.pink_garnet_pickaxe": "Pink Garnet Pickaxe",
@@ -17,7 +18,11 @@
   "item.tutorialmod.speed_axe": "Speed Axe",
   "item.tutorialmod.speed_hoe": "Speed Hoe",
   "item.tutorialmod.speed_shovel": "Speed Shovel",
-
+  "item.tutorialmod.lapite_infused_netherite_sword": "Lapite Infused Netherite Sword",
+  "item.tutorialmod.lapite_infused_netherite_pickaxe": "Lapite Infused Netherite Pickaxe",
+  "item.tutorialmod.lapite_infused_netherite_shovel": "Lapite Infused Netherite Shovel",
+  "item.tutorialmod.lapite_infused_netherite_scythe": "Lapite Infused Netherite Scythe",
+  "item.tutorialmod.lapite_infused_netherite_axe": "Lapite Infused Netherite Axe",
 
 
   "block.tutorialmod.pink_garnet_block": "Pink Garnet Block",
@@ -28,6 +33,7 @@
   "block.tutorialmod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
   "block.tutorialmod.ipeas": "Ipeas",
   "block.tutorialmod.magic_block": "Magic Block",
+  "block.tutorialmod.compressed_lapis_block": "Compressed Lapis Block",
 
   "itemgroup.tutorialmod.pink_garnet_blocks": "Pink Garnet Blocks",
   "itemgroup.tutorialmod.frostgem_blocks": "Frostgem Blocks",
@@ -40,5 +46,6 @@
   "tooltip.tutorialmod.chisel.shift_down": "This item chisels blocks into Bricks!",
   "tooltip.tutorialmod.chisel": "Press §eShift§r for more Infromation!",
   "tooltip.tutorialmod.cauliflower.tooltip": "A delicious and healthy food!",
-  "tooltip.tutorialmod.frostgem.tooltip": "§9It's cold to the touch!§"
+  "tooltip.tutorialmod.frostgem.tooltip": "§9It's cold to the touch!§",
+  "tooltip.tutorialmod.lapite.tooltip": "§AA really compressed material...§"
 }

@@ -5,8 +5,10 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
@@ -16,14 +18,34 @@ import net.sounderv4.tutorialmod.item.ModItems;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import net.minecraft.data.server.recipe.SmithingTransformRecipeJsonBuilder;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
     public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 
+    // Custom smithing recipe method requiring lapite instead of netherite ingot
+    public static void offerLapiteUpgradeRecipe(RecipeExporter exporter, Item input, RecipeCategory category, Item result) {
+        SmithingTransformRecipeJsonBuilder.create(
+                        Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.ofItems(input),
+                        Ingredient.ofItems(ModItems.LAPITE),
+                        category,
+                        result
+                ).criterion("has_lapite", conditionsFromItem(ModItems.LAPITE))
+                .offerTo(exporter, getItemPath(result) + "_lapite_smithing");
+    }
+
     @Override
     public void generate(RecipeExporter exporter) {
+        // Lapite smithing upgrade recipes for netherite tools -> lapite infused
+        offerLapiteUpgradeRecipe(exporter, Items.NETHERITE_SWORD, RecipeCategory.COMBAT, ModItems.LAPITE_INFUSED_NETHERITE_SWORD);
+        offerLapiteUpgradeRecipe(exporter, Items.NETHERITE_PICKAXE, RecipeCategory.TOOLS, ModItems.LAPITE_INFUSED_NETHERITE_PICKAXE);
+        offerLapiteUpgradeRecipe(exporter, Items.NETHERITE_SHOVEL, RecipeCategory.TOOLS, ModItems.LAPITE_INFUSED_NETHERITE_SHOVEL);
+        offerLapiteUpgradeRecipe(exporter, Items.NETHERITE_AXE, RecipeCategory.TOOLS, ModItems.LAPITE_INFUSED_NETHERITE_AXE);
+        offerLapiteUpgradeRecipe(exporter, Items.NETHERITE_HOE, RecipeCategory.TOOLS, ModItems.LAPITE_INFUSED_NETHERITE_SCYTHE);
+
         //smeltables
         List<ItemConvertible> PINK_GARNET_SMELTABLES = List.of(ModItems.RAW_PINK_GARNET, ModBlocks.PINK_GARNET_ORE,
                 ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
@@ -39,6 +61,23 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("RRR")
                 .input('R', ModItems.RAW_PINK_GARNET)
                 .criterion(hasItem(ModItems.RAW_PINK_GARNET), conditionsFromItem(ModItems.RAW_PINK_GARNET))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.COMPRESSED_LAPIS_BLOCK)
+                .pattern("LLL")
+                .pattern("LLL")
+                .pattern("LLL")
+                .input('L', Items.LAPIS_BLOCK)
+                .criterion(hasItem(Items.LAPIS_BLOCK), conditionsFromItem(Items.LAPIS_BLOCK))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.LAPITE)
+                .pattern("CNC")
+                .pattern("NCN")
+                .pattern("CNC")
+                .input('C', ModItems.COMPRESSED_LAPIS_BLOCK_ITEM)
+                .input('N', Items.NETHERITE_INGOT)
+                .criterion(hasItem(Items.LAPIS_BLOCK), conditionsFromItem(Items.LAPIS_BLOCK))
                 .offerTo(exporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PINK_GARNET_PICKAXE)
@@ -128,7 +167,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(exporter);
 
-             //shapeless
+        //shapeless
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAW_PINK_GARNET, 9)
                 .input(ModBlocks.RAW_PINK_GARNET_BLOCK)
                 .criterion(hasItem(ModBlocks.RAW_PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.RAW_PINK_GARNET_BLOCK))
@@ -139,14 +178,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.MAGIC_BLOCK), conditionsFromItem(ModBlocks.MAGIC_BLOCK))
                 .offerTo(exporter, Identifier.of(Tutorialmod.MOD_ID, "raw_pink_garnet_from_magic_block"));
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.FROSTGEM,1)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.FROSTGEM, 1)
                 .input(ModItems.FROSTGEM_SHARDS)
                 .input(ModItems.FROSTGEM_SHARDS)
                 .input(ModItems.FROSTGEM_SHARDS)
                 .input(ModItems.FROSTGEM_SHARDS)
                 .criterion(hasItem(ModItems.FROSTGEM_SHARDS), conditionsFromItem(ModItems.FROSTGEM_SHARDS))
                 .offerTo(exporter, Identifier.of(Tutorialmod.MOD_ID, "frostgem_from_shards"));
-
-
     }
 }

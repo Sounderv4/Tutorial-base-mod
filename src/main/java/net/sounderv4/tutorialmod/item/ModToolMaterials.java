@@ -15,10 +15,11 @@ import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
     PINK_GARNET(ModTags.Blocks.INCORRECT_FOR_PINK_GARTNET_TOOL,
-            900, 6.0F, 4.0F, 22, () -> Ingredient.ofItems(new ItemConvertible[]{ModItems.PINK_GARNET})),
+            900, 6.0F, 4.0F, 22, () -> Ingredient.ofItems(ModItems.PINK_GARNET)),
     SPEED(ModTags.Blocks.INCORRECT_FOR_SPEED_TOOL,
-            320, 700.0F, 4.0F, 22, () -> Ingredient.ofItems(new ItemConvertible[]{Items.GOLD_INGOT, Items.IRON_INGOT}));
-
+            320, 12.0F, 4.0F, 22, () -> Ingredient.ofItems(Items.GOLD_INGOT, Items.IRON_INGOT)),
+    LAPITE(ModTags.Blocks.INCORRECT_FOR_LAPITE_TOOL,
+            9000, 22.0F, 10.0F, 52, () -> Ingredient.ofItems(ModItems.LAPITE));
     private final TagKey<Block> inverseTag;
     private final int itemDurability;
     private final float miningSpeed;
@@ -26,7 +27,7 @@ public enum ModToolMaterials implements ToolMaterial {
     private final int enchantability;
     private final Supplier<Ingredient> repairIngredient;
 
-    private ModToolMaterials(final TagKey<Block> inverseTag, final int itemDurability, final float miningSpeed, final float attackDamage, final int enchantability, final Supplier<Ingredient> repairIngredient) {
+    ModToolMaterials(final TagKey<Block> inverseTag, final int itemDurability, final float miningSpeed, final float attackDamage, final int enchantability, final Supplier<Ingredient> repairIngredient) {
         this.inverseTag = inverseTag;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
@@ -57,7 +58,7 @@ public enum ModToolMaterials implements ToolMaterial {
     }
 
     public Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredient.get();
+        return this.repairIngredient.get();
     }
 }
 

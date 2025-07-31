@@ -48,6 +48,11 @@ public class ModBlocks {
     public static  final Block MAGIC_BLOCK = registerBlock("magic_block",
             new MagicBlock(AbstractBlock.Settings.create().strength(1f).requiresTool()));
 
+    public static final Block COMPRESSED_LAPIS_BLOCK = registerBlock("compressed_lapis_block",
+            new Block(AbstractBlock.Settings.create().strength(10f).sounds(BlockSoundGroup.STONE)
+                    .requiresTool()
+                    .luminance(value -> 5)));
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

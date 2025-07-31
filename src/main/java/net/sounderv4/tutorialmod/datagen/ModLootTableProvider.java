@@ -32,6 +32,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MAGIC_BLOCK);
         addDrop(ModBlocks.IPEAS);
         addDrop(ModBlocks.FROSTGEM_BLOCK);
+        addDrop(ModBlocks.COMPRESSED_LAPIS_BLOCK);
+
         //normal ore drops
         addDrop(ModBlocks.PINK_GARNET_ORE, oreDrops(ModBlocks.PINK_GARNET_ORE, ModItems.RAW_PINK_GARNET));
         //complex ore drops

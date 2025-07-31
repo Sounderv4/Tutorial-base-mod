@@ -1,0 +1,6 @@
+{
+  "parent": "tutorialmod:item/big_tool_generated",
+  "textures": {
+    "layer0": "tutorialmod:item/lapite_infused_netherite_sword"
+  }
+}
