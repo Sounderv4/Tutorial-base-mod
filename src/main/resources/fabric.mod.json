@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "tutorialmod",
+	"id": "kerlmod",
 	"version": "${version}",
-	"name": "Tutorialmod",
+	"name": "KerlMod",
 	"description": "A simple and dumb tutorial-followed mod that may implement individual features...",
 	"authors": [
 		"Me!"
@@ -12,21 +12,21 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/tutorialmod/icon.png",
+	"icon": "assets/kerlmod/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.sounderv4.tutorialmod.Tutorialmod"
+			"net.sounderv4.kerlmod.KerlMod"
 		],
 		"fabric-datagen": [
-			"net.sounderv4.tutorialmod.TutorialmodDataGenerator"
+			"net.sounderv4.kerlmod.KerlModDataGenerator"
 		],
 		"client": [
-			"net.sounderv4.tutorialmod.TutorialModClient"
+			"net.sounderv4.kerlmod.KerlModClient"
 		]
 	},
 	"mixins": [
-		"tutorialmod.mixins.json"
+		"KerlMod.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",

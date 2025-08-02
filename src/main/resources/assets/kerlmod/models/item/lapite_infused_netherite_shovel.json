@@ -1,0 +1,6 @@
+{
+  "parent": "kerlmod:item/big_tool_generated",
+  "textures": {
+    "layer0": "kerlmod:item/lapite_infused_netherite_shovel"
+  }
+}

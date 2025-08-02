@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "net.sounderv4.tutorialmod.mixin",
+	"package": "net.sounderv4.kerlmod.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin"
